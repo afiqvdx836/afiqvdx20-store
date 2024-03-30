@@ -60,12 +60,20 @@
           {% endif %}
           class="product-variant-id"
         >
-
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
         <div class="product-form__buttons">
+          <div class="advisory">ADVISORY: Singapore's temperatures are expected to rise to its highest ever.
+          The average wait time for ceiling fan installations across the country will be longer now. Purchase your ceiling fan before it's too late.
+          </div>
+          <style>
+            .advisory{
+              font-size: 12px;
+              padding: 16px 0;
+            }
+          </style>
           {%- liquid
             assign check_against_inventory = true
             if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'

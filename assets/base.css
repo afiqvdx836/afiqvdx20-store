@@ -1279,9 +1279,9 @@ button.shopify-payment-button__button--unbranded {
   bottom: var(--buttons-border-width);
   left: var(--buttons-border-width);
   z-index: 1;
-  border-radius: var(--buttons-radius);
+  border-radius: 2px;
   box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-      rgba(var(--color-button-text), var(--border-opacity)),
+      rgba(188, 128, 128, 0.8),
     0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
   transition: box-shadow var(--duration-short) ease;
 }
@@ -3516,4 +3516,36 @@ details-disclosure > details {
   .animate--hover-vertical-lift .button:not([disabled]).button--secondary:hover:after {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
+}
+
+@media (min-width: 1024px) {
+  .product--thumbnail_slider {
+    position: relative;
+ }
+  .product--thumbnail_slider media-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+ }
+  .product--thumbnail_slider .slider-mobile-gutter:not(.thumbnail-slider) {
+    width: calc(100% - 100px);
+ }
+  .product--thumbnail_slider .thumbnail-slider {
+    width: 100px;
+    padding-right: 10px;
+ }
+  .product--thumbnail_slider .slider-button {
+    display: none !important;
+ }
+  .product--thumbnail_slider .thumbnail-slider .thumbnail-list.slider--tablet-up {
+    padding: 0;
+    display: block;
+ }
+  .product--thumbnail_slider .thumbnail-slider .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+    width: 100%;
+ }
+}
+
+legend.form__label {
+  display: flex;
 }

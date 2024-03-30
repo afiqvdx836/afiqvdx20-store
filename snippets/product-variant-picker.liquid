@@ -51,7 +51,7 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}: {{- option.selected_value -}}</legend>
+          <legend class="form__label">{{ option.name }}: <div class="selected_value">{{- option.selected_value -}}</div></legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -59,6 +59,19 @@
             picker_type: picker_type
           %}
         </fieldset>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var radioButtons = document.querySelectorAll('.js.product-form__input--pill input[type="radio"]');
+            
+            radioButtons.forEach(function(radioButton) {
+              radioButton.addEventListener("change", function() {
+                var selectedValue = this.value;
+                var selectedValueElement = this.closest('.js.product-form__input--pill').querySelector('.selected_value');
+                selectedValueElement.textContent = selectedValue;
+              });
+            });
+          });
+        </script>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
