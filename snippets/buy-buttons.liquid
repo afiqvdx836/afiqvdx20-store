@@ -65,7 +65,7 @@
         {%- endif -%}
 
         <div class="product-form__buttons">
-          <div class="advisory">ADVISORY: Singapore's temperatures are expected to rise to its highest ever.
+          <div class="advisory"><b>ADVISORY</b>: Singapore's temperatures are expected to rise to its highest ever.
           The average wait time for ceiling fan installations across the country will be longer now. Purchase your ceiling fan before it's too late.
           </div>
           <style>
@@ -73,6 +73,7 @@
               font-size: 12px;
               line-height: 1.3em; 
               padding: 16px 0;
+              color: #7A0001;
             }
           </style>
           {%- liquid
@@ -106,7 +107,7 @@
             {{ form | payment_button }}
           {%- endif -%}
           <div class="arrive">Arrives in early Feb</div>
-          <div class="">Fixed installation and shipping tee of $30 per tan will be applied to all orders at checkout. Additional charges appended here may apply. Our
+          <div class="btm-text">Fixed installation and shipping tee of $30 per tan will be applied to all orders at checkout. Additional charges appended here may apply. Our
           ceiling tan specialists wall contact you once you ve completed vour.
           purchase.</div>
           <style>
@@ -115,6 +116,11 @@
               text-align: center;
               font-weight: 600;
               padding: 10px 0;
+            }
+            .btm-text {
+              font-size: 12px;
+              line-height: 1.3em;
+              color: #7A0001;
             }
           </style>
           <img class="banner-mobile" src={{ 'banner.png' | file_img_url: 'master' }} style="width: 100%">

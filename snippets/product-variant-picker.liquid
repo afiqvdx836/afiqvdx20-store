@@ -20,7 +20,7 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
-    <div style="font-weight: 600">Select Hugger Motor</div>
+    <div style="font-weight: 600; margin: 20px 0">Select Hugger Motor</div>
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
