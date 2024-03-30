@@ -20,6 +20,7 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
+    <div style="font-weight: 600">Select Hugger Motor</div>
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
@@ -33,7 +34,6 @@
           endif
         endif
       -%}
-      <div>Select Hugger Motor</div>
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
           <legend class="form__label">
